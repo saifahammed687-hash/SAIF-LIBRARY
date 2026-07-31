@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="app-header">
+  <div class="brand">
+    <h1>Library Management System</h1>
+    <span class="mono">circulation desk</span>
+  </div>
+  <div class="who">
+    <span id="userStamp" class="stamp"></span>
+    <button id="logoutBtn" class="icon-btn">Log out</button>
+  </div>
+</header>
+
+<nav class="tablist" id="tablist">
+  <button class="pill active" data-panel="books">Books</button>
+  <button class="pill" data-panel="add" data-roles="Librarian,Admin">Add book</button>
+  <button class="pill" data-panel="report" data-roles="Librarian,Admin">Report</button>
+  <button class="pill" data-panel="users" data-roles="Admin">Users</button>
+</nav>
+
+<main>
+
+  <!-- BOOKS PANEL -->
+  <section id="panel-books" class="panel active">
+    <div class="panel-header">
+      <h2>Book ledger</h2>
+      <div class="search-row">
+        <input type="text" id="searchInput" placeholder="Search by title or ID">
+        <button class="icon-btn" id="searchBtn">Search</button>
+        <button class="icon-btn" id="clearSearchBtn">Clear</button>
+      </div>
+    </div>
+    <div id="booksMsg" class="msg"></div>
+    <div id="booksTableWrap"></div>
+  </section>
+
+  <!-- ADD BOOK PANEL -->
+  <section id="panel-add" class="panel">
+    <div class="panel-header"><h2>Add a new book</h2></div>
+    <div id="addMsg" class="msg"></div>
+    <form id="addForm" class="inline-form">
+      <label>Book ID
+        <input type="text" id="addId" required>
+      </label>
+      <label>Title
+        <input type="text" id="addTitle" required>
+      </label>
+      <label>Author
+        <input type="text" id="addAuthor" required>
+      </label>
+      <div class="full">
+        <button type="submit" class="primary">Add book</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- REPORT PANEL -->
+  <section id="panel-report" class="panel">
+    <div class="panel-header">
+      <h2>Circulation report</h2>
+      <button class="icon-btn" id="refreshReportBtn">Refresh</button>
+    </div>
+    <div class="stat-strip" id="statStrip"></div>
+    <div id="reportTableWrap"></div>
+  </section>
+
+  <!-- USERS PANEL -->
+  <section id="panel-users" class="panel">
+    <div class="panel-header"><h2>Registered users</h2></div>
+    <div id="usersTableWrap"></div>
+  </section>
+
+</main>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>

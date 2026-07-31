@@ -1,0 +1,12 @@
+{
+  "name": "library-management-system-web",
+  "version": "1.0.0",
+  "description": "Library Management System - web version (frontend + backend), converted from the original C console app. Uses MySQL for storage.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "mysql2": "^3.9.7"
+  }
+}
