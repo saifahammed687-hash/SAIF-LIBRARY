@@ -3,60 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Library Management System</title>
+<title>SAIF LIBRARY</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <div class="card-shell">
   <div class="library-card">
-    <div class="library-card__top">
-      <span class="eyebrow">Circulation Desk</span>
-      <h1>Library Management System</h1>
+
+    <div class="brand-pane">
+      <div>
+        <div class="brand-icon">📚</div>
+        <h1>SAIF LIBRARY</h1>
+        <p>One place to track every book, every borrower, and every role — from students to admins.</p>
+      </div>
+      <div>
+        <div class="role-chips">
+          <span class="role-chip">Student</span>
+          <span class="role-chip">Teacher</span>
+          <span class="role-chip">Librarian</span>
+          <span class="role-chip">Admin</span>
+        </div>
+        <div class="brand-foot" style="margin-top:1.5rem;">Circulation Desk · Est. today</div>
+      </div>
     </div>
 
-    <div class="tabs">
-      <button class="tab active" data-tab="login">Log in</button>
-      <button class="tab" data-tab="register">Register</button>
+    <div class="form-pane">
+      <div class="tabs">
+        <button class="tab active" data-tab="login">Log in</button>
+        <button class="tab" data-tab="register">Register</button>
+      </div>
+
+      <!-- LOGIN -->
+      <form id="loginForm" class="form-panel active">
+        <div id="loginMsg" class="msg"></div>
+        <label>Gmail
+          <input type="email" id="loginGmail" placeholder="you@gmail.com" required>
+        </label>
+        <label>Password
+          <input type="password" id="loginPassword" required>
+        </label>
+        <button type="submit" class="primary">Log in</button>
+      </form>
+
+      <!-- REGISTER -->
+      <form id="registerForm" class="form-panel">
+        <div id="registerMsg" class="msg"></div>
+        <label>Username
+          <input type="text" id="regUsername" required>
+        </label>
+        <label>Gmail
+          <input type="email" id="regGmail" placeholder="you@gmail.com" required>
+          <span class="hint">Must end with @gmail.com</span>
+        </label>
+        <label>Password
+          <input type="password" id="regPassword" required>
+          <span class="hint">8+ chars, uppercase, lowercase, number, special character</span>
+        </label>
+        <label>Role
+          <select id="regRole" required>
+            <option value="" disabled selected>Select your role</option>
+            <option value="Student">Student</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Librarian">Librarian</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </label>
+        <button type="submit" class="primary">Create account</button>
+      </form>
     </div>
 
-    <!-- LOGIN -->
-    <form id="loginForm" class="form-panel active">
-      <div id="loginMsg" class="msg"></div>
-      <label>Gmail
-        <input type="email" id="loginGmail" placeholder="you@gmail.com" required>
-      </label>
-      <label>Password
-        <input type="password" id="loginPassword" required>
-      </label>
-      <button type="submit" class="primary">Log in</button>
-    </form>
-
-    <!-- REGISTER -->
-    <form id="registerForm" class="form-panel">
-      <div id="registerMsg" class="msg"></div>
-      <label>Username
-        <input type="text" id="regUsername" required>
-      </label>
-      <label>Gmail
-        <input type="email" id="regGmail" placeholder="you@gmail.com" required>
-        <span class="hint">Must end with @gmail.com</span>
-      </label>
-      <label>Password
-        <input type="password" id="regPassword" required>
-        <span class="hint">8+ chars, uppercase, lowercase, number, special character</span>
-      </label>
-      <label>Role
-        <select id="regRole" required>
-          <option value="" disabled selected>Select your role</option>
-          <option value="Student">Student</option>
-          <option value="Teacher">Teacher</option>
-          <option value="Librarian">Librarian</option>
-          <option value="Admin">Admin</option>
-        </select>
-      </label>
-      <button type="submit" class="primary">Create account</button>
-    </form>
   </div>
 </div>
 
